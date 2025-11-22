@@ -1,0 +1,200 @@
+@import "tailwindcss";
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+:root {
+  --background: 210 20% 98%;
+  --foreground: 215 25% 15%;
+
+  --card: 0 0% 100%;
+  --card-foreground: 215 25% 15%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 215 25% 15%;
+
+  --primary: 210 100% 45%;
+  --primary-foreground: 0 0% 100%;
+
+  --secondary: 180 80% 50%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 210 15% 92%;
+  --muted-foreground: 215 15% 45%;
+
+  --accent: 140 70% 50%;
+  --accent-foreground: 0 0% 100%;
+
+  --destructive: 0 75% 55%;
+  --destructive-foreground: 0 0% 100%;
+
+  --success: 140 70% 50%;
+  --success-foreground: 0 0% 100%;
+
+  --warning: 45 90% 55%;
+  --warning-foreground: 0 0% 100%;
+
+  --info: 210 100% 45%;
+  --info-foreground: 0 0% 100%;
+
+  --danger: 0 75% 55%;
+  --danger-foreground: 0 0% 100%;
+
+  --border: 210 20% 88%;
+  --input: 210 20% 88%;
+  --ring: 210 100% 45%;
+
+  --radius: 0.75rem;
+  
+  --gradient-primary: linear-gradient(135deg, hsl(210 100% 45%), hsl(200 90% 55%));
+  --gradient-score-excellent: linear-gradient(135deg, hsl(140 70% 50%), hsl(150 80% 45%));
+  --gradient-score-good: linear-gradient(135deg, hsl(180 70% 50%), hsl(170 80% 45%));
+  --gradient-score-fair: linear-gradient(135deg, hsl(45 90% 55%), hsl(35 85% 50%));
+  --gradient-score-poor: linear-gradient(135deg, hsl(0 75% 55%), hsl(10 80% 50%));
+  
+  --shadow-card: 0 4px 12px -2px hsl(210 20% 20% / 0.08);
+  --shadow-elevated: 0 8px 24px -4px hsl(210 20% 20% / 0.12);
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 215 30% 8%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 25% 12%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 25% 12%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 210 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 180 70% 45%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 215 20% 18%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 140 65% 45%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 140 65% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 85% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 210 100% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --danger: 0 70% 50%;
+    --danger-foreground: 0 0% 100%;
+
+    --border: 215 20% 22%;
+    --input: 215 20% 22%;
+    --ring: 210 100% 55%;
+    
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 55%), hsl(200 90% 65%));
+    --gradient-score-excellent: linear-gradient(135deg, hsl(140 65% 45%), hsl(150 75% 40%));
+    --gradient-score-good: linear-gradient(135deg, hsl(180 65% 45%), hsl(170 75% 40%));
+    --gradient-score-fair: linear-gradient(135deg, hsl(45 85% 50%), hsl(35 80% 45%));
+    --gradient-score-poor: linear-gradient(135deg, hsl(0 70% 50%), hsl(10 75% 45%));
+  }
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+body {
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.shadow-elevated {
+  box-shadow: var(--shadow-elevated);
+}
+
+.transition-smooth {
+  transition: var(--transition-smooth);
+}
+
+.gradient-primary {
+  background: var(--gradient-primary);
+}
+
+.gradient-success {
+  background: var(--gradient-score-excellent);
+}
+
+.gradient-warning {
+  background: var(--gradient-score-fair);
+}
+
+.gradient-danger {
+  background: var(--gradient-score-poor);
+}
+
+.bg-success {
+  background-color: hsl(var(--success));
+}
+
+.text-success {
+  color: hsl(var(--success));
+}
+
+.bg-warning {
+  background-color: hsl(var(--warning));
+}
+
+.text-warning {
+  color: hsl(var(--warning));
+}
+
+.bg-info {
+  background-color: hsl(var(--info));
+}
+
+.text-info {
+  color: hsl(var(--info));
+}
+
+.bg-danger {
+  background-color: hsl(var(--danger));
+}
+
+.text-danger {
+  color: hsl(var(--danger));
+}
